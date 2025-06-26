@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import SubmitButton from "@/components/general/SumbitButton"
+import handleSubmission from "./action"
 
 export default function CreateBlog(){
     return(
@@ -22,7 +23,7 @@ export default function CreateBlog(){
             
         </CardHeader>
         <CardContent>
-            <form className="flex flex-col gap-4">
+            <form className="flex flex-col gap-4" action={handleSubmission}>
                 <div className="flex flex-col gap-4">
                    <Label>Title</Label>
                    <Input  name="title" required type="text" placeholder="Enter the title for your post"></Input>
