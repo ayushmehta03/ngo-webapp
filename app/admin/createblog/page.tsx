@@ -10,13 +10,18 @@ import handleSubmission from "./action"
 
 export default function CreateBlog(){
     return(
-        <div>
-        <div className="flex flex-row gap-4 items-center justify-center p-3">
-                     <LayoutDashboard />
+        <div >
+            <div className="flex flex-row gap-6 items-center justify-center mb-10">
+       < Link href="/admin" className="">
+  <LayoutDashboard  />
+</Link>
+<p>Go to dashboard</p>
 
-            <Link href="/admin" className={buttonVariants({variant:"ghost"})}> Go to Dashboard</Link>
-        </div>
-        <Card className="max-w-lg mx-auto py-8  ">
+
+            </div>
+
+
+        <Card className="max-w-lg mx-auto py-8 px-2  ">
         <CardHeader>
             <CardTitle>Upload Contents</CardTitle>
             <CardDescription>Create Posts it will show up on Blog Page</CardDescription>
@@ -35,8 +40,8 @@ export default function CreateBlog(){
 
                 </div>
                   <div className="flex flex-col gap-4">
-                   <Label>Image</Label>
-                   <Input  name="url" required type="text" placeholder="Upload your image"></Input>
+                   <Label>Upload an Image</Label>
+                   <Input  name="image" required type="file" accept="image/*"></Input>
                 </div>
                 <SubmitButton />
          </form>
