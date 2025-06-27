@@ -4,7 +4,7 @@ import { ModeToggle } from "./ui/ModeToggle"
 
 const Navbar = () => {
   return (
-    <nav className="p-5 ">
+    <nav className="p-5 mb-10 ">
     <div className="flex justify-between items-center t ">
     <ul>
         <li>Creative Educational and Social Welfare</li>
@@ -12,10 +12,10 @@ const Navbar = () => {
     <ul className="flex space-x-7 px-5  items-center">
         
                 <li>
-            <Link href="/about" className="hover:text-blue-500"     >Blog</Link>
+            <Link href="/blog" className="hover:text-blue-500"     >Blog</Link>
         </li>
            <li>
-            <Link href="/about"   className="hover:text-blue-500"    >Donate</Link>
+            <Link href="/donate"   className="hover:text-blue-500"    >Donate</Link>
         </li>
 
         <li>
@@ -24,7 +24,7 @@ const Navbar = () => {
 
 
                    <li>
-            <Link href="/about"   className="hover:text-blue-500"    >Contact Us</Link>
+            <Link href="/contact"   className="hover:text-blue-500"    >Contact Us</Link>
         </li>
         <ModeToggle />
     </ul>
