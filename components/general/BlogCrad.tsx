@@ -2,7 +2,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import Link from "next/link";
 
 interface IAppProps {
   data: {
@@ -37,12 +36,12 @@ export default function BlogCard({ data }: IAppProps) {
 
       <CardContent className="p-4 flex flex-col justify-between flex-grow">
         <div>
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white line-clamp-2 group-hover:underline transition mb-2">
+          <h3 className="text-xl font-bold text-gray-900 dark:text-white line-clamp-2  transition mb-2">
             {data.title}
           </h3>
-          <p className="text-base text-gray-700 dark:text-gray-300 line-clamp-2 mb-4">
-            {data.content}
-          </p>
+    <p className="text-1xl p-2 text-gray-900 font-semibold  dark:text-white line-clamp-1  transition mb-2 ">
+        Author:  {data.content}
+    </p>
         </div>
         <div className="flex justify-between items-center mt-auto">
           <p className="text-sm text-gray-600 dark:text-gray-400">

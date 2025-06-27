@@ -12,10 +12,10 @@ const Navbar = () => {
     <ul className="flex space-x-7 px-5  items-center">
         
                 <li>
-            <Link href="/blog" className="hover:text-blue-500"     >Blog</Link>
+            <Link href="/blog" className="hover:text-blue-500"     >Our Work</Link>
         </li>
            <li>
-            <Link href="/donate"   className="hover:text-blue-500"    >Donate</Link>
+            <Link href="/donate"   className="hover:text-blue-500"    >Volunteer</Link>
         </li>
 
         <li>
