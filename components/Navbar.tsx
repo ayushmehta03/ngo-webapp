@@ -10,7 +10,10 @@ const Navbar = () => {
         <li>Creative Educational and Social Welfare</li>
     </ul>
     <ul className="flex space-x-7 px-5  items-center">
-        
+          <li>
+            <Link href="/" className="hover:text-blue-500">Home</Link>
+        </li>
+
                 <li>
             <Link href="/blog" className="hover:text-blue-500"     >Our Work</Link>
         </li>
@@ -18,10 +21,7 @@ const Navbar = () => {
             <Link href="/donate"   className="hover:text-blue-500"    >Volunteer</Link>
         </li>
 
-        <li>
-            <Link href="/about" className="hover:text-blue-500">About Us</Link>
-        </li>
-
+      
 
                    <li>
             <Link href="/contact"   className="hover:text-blue-500"    >Contact Us</Link>
