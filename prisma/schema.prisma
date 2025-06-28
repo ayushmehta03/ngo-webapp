@@ -21,3 +21,12 @@ model BlogPost{
   createdAt DateTime @default(now())
 
 }
+
+model volunteerInfo{
+ id String @id@default(uuid())
+  fullName  String 
+ phoneno String 
+ supportType String
+ mailId String
+ createdAt DateTime @default(now())
+}

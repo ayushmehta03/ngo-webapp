@@ -18,7 +18,7 @@ const Navbar = () => {
             <Link href="/blog" className="hover:text-blue-500"     >Our Work</Link>
         </li>
            <li>
-            <Link href="/donate"   className="hover:text-blue-500"    >Volunteer</Link>
+            <Link href="/volunteer"   className="hover:text-blue-500"   >Volunteer</Link>
         </li>
 
       
