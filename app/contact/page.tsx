@@ -3,6 +3,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { PhoneCall } from "lucide-react"
+import handleQuery from "./action"
+
 export default function Contact(){
  return(
     <>
@@ -10,7 +12,7 @@ export default function Contact(){
         <h1 className="text-center text-3xl   font-semibold ">Contact
                <span className="text-3xl font-semibold px-1 text-blue-400 dark:text-blue-600 ">Us</span>
         </h1>
-                       <PhoneCall size={28} />
+         <PhoneCall size={28} />
     </div>
 
    <Card className="max-w-lg mx-auto mt-6  px-1 bg-white dark:bg-black">
@@ -20,14 +22,14 @@ export default function Contact(){
         </CardHeader>
 
         <CardContent>
-          <form  className="flex flex-col gap-4" >
+          <form  className="flex flex-col gap-6" action={handleQuery}>
             <div className="flex flex-col gap-4">
               <Label>Enter your name</Label>
-              <Input
+              <Input 
                 name="name"
                 required
                 type="text"
-                placeholder="Enter your  name"
+                placeholder="Enter your name"
               />
             </div>
 
@@ -44,27 +46,17 @@ export default function Contact(){
             <div className="flex flex-col gap-4">
               <Label>Ask your queries </Label>
               <Input
-                name="supportType"
+                name="query"
                 required
                 type="text"
                 placeholder="Write down your query"
               />
             </div>
-
-            <div className="flex flex-col gap-4 mb-4">
-              <Label>Enter your phone no</Label>
-              <Input
-                name="phoneNo"
-                required
-                type="tel"
-                placeholder="91xxxxxxx"
-              />
-            </div>
-
             <SubmitButton />
           </form>
         </CardContent>
       </Card>
     </>
+
  )
 }

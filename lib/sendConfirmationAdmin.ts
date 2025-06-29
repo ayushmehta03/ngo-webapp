@@ -21,7 +21,7 @@ export async function sendMailToAdmin(
 
     const info = await transporter.sendMail({
       from: `"Creative NGO" <${process.env.SMTP_USER}>`,
-      to: process.env.ADMIN_EMAIL, // 👈 put your admin email in .env
+      to: process.env.ADMIN_EMAIL, 
       subject: "📥 New Volunteer Registration",
       html: `
         <p>A new volunteer has signed up:</p>
@@ -35,7 +35,6 @@ export async function sendMailToAdmin(
       `,
     });
 
-    console.log("Admin notification sent:", info.messageId);
   } catch (error) {
     console.error("Error sending admin mail:", error);
     throw error;
