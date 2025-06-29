@@ -2,6 +2,7 @@
 import toast from "react-hot-toast";
 import { prisma } from "../utilis/db";
 import { redirect } from "next/navigation";
+import { sendConfirmationMail } from "@/lib/sendConfirmationMail";
 
 
 
@@ -26,6 +27,7 @@ export default  async function handleSumbission(formData:FormData){
      mailId
     }
   })
+  await sendConfirmationMail(mailId,fullName);
  redirect('/')
 
 }
