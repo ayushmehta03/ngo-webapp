@@ -1,24 +1,43 @@
-"use server"
-import { Resend } from "resend";
+"use server";
 
-const resend= new Resend(process.env.RESEND_API_KEY);
-export async function sendMailToAdmin(fullName:string, phoneno:string, mailId:string, supportType:string ) {
-    try{
-         await resend.emails.send({
-      from: process.env.EMAIL_FROM || "onboarding@resend.dev",
-      to: process.env.ADMIN_EMAIL!, // make sure it's in .env
-      subject: `📥 New Volunteer Sign-Up: ${fullName}`,
+import nodemailer from "nodemailer";
+
+export async function sendMailToAdmin(
+  fullName: string,
+  phoneno: string,
+  mailId: string,
+  supportType: string
+) {
+  try {
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT) || 465,
+      secure: process.env.SMTP_SECURE === "true",
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    });
+
+    const info = await transporter.sendMail({
+      from: `"Creative NGO" <${process.env.SMTP_USER}>`,
+      to: process.env.ADMIN_EMAIL, // 👈 put your admin email in .env
+      subject: "📥 New Volunteer Registration",
       html: `
-        <h3>New Volunteer Registration</h3>
-        <p><strong>Name:</strong> ${fullName}</p>
-        <p><strong>Email:</strong> ${mailId}</p>
-        <p><strong>Phone:</strong> ${phoneno}</p>
-        <p><strong>Support Type:</strong> ${supportType}</p>
+        <p>A new volunteer has signed up:</p>
+        <ul>
+          <li><strong>Name:</strong> ${fullName}</li>
+          <li><strong>Email:</strong> ${mailId}</li>
+          <li><strong>Phone:</strong> ${phoneno}</li>
+          <li><strong>Support Type:</strong> ${supportType}</li>
+        </ul>
+        <p>Please reach out to them soon.</p>
       `,
     });
 
-    } catch(error){
-        console.error("resend error",error)
-    }
-    
+    console.log("Admin notification sent:", info.messageId);
+  } catch (error) {
+    console.error("Error sending admin mail:", error);
+    throw error;
+  }
 }

@@ -28,10 +28,9 @@ export default  async function handleSumbission(formData:FormData){
      mailId
     }
   })
-  // send mail to the interested one
-  await sendConfirmationMail(mailId,fullName);
-  // send mail to the admin 
-   await sendMailToAdmin(fullName, phoneno,mailId,supportType)
+
+  sendConfirmationMail(mailId,fullName);
+  sendMailToAdmin(fullName,phoneno,mailId,supportType);
  redirect('/')
 
 }
