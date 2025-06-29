@@ -17,7 +17,7 @@ export default async function sendQueryMail(to:string ,name:string){
       subject: "About your query",
       html: `
         <p>Hi <strong>${name}</strong>,</p>
-        <p>WE have recived your query request ${name}!</p>
+        <p>WE have received your query request ${name}!</p>
         <p>You'll hear from us soon Thank You !</p>
         <br/>
         <p>Hope you have a nice day </p>

@@ -1,6 +1,8 @@
 "use server"
 import { redirect } from "next/navigation";
 import { prisma } from "../utilis/db";
+import sendQueryMail from "@/lib/sendqueryEmail";
+import reciveQueryMail from "@/lib/reciveQueryMail";
 
 
 
@@ -21,6 +23,8 @@ export default  async function handleQuery(formData:FormData){
             query
         }
     })
+    sendQueryMail(email,name);
+    reciveQueryMail(name,email,query)
     redirect('/')
 
 }

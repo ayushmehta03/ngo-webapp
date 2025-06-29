@@ -13,7 +13,7 @@ export default async function (name:string,email:string,query:string){
     });
  const info= transporter.sendMail({
       from: `"Creative NGO" <${process.env.SMTP_USER}>`,
-      to:process.env.ADMIN_MAIL,
+      to:process.env.ADMIN_EMAIL,
       subject:"User Query Mail Sir",
        html: `
         <p>A user is having query /p>
