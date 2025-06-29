@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import { prisma } from "../utilis/db";
 import { redirect } from "next/navigation";
 import { sendConfirmationMail } from "@/lib/sendConfirmationMail";
+import { sendMailToAdmin } from "@/lib/sendConfirmationAdmin";
 
 
 
@@ -27,7 +28,10 @@ export default  async function handleSumbission(formData:FormData){
      mailId
     }
   })
+  // send mail to the interested one
   await sendConfirmationMail(mailId,fullName);
+  // send mail to the admin 
+   await sendMailToAdmin(fullName, phoneno,mailId,supportType)
  redirect('/')
 
 }

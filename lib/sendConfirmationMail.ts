@@ -3,7 +3,6 @@ import {Resend} from "resend"
 
 const resend= new Resend(process.env.RESEND_API_KEY);
  
-
 export async function sendConfirmationMail(to:string,name:string) {
     try{
         const data = await resend.emails.send({
@@ -19,7 +18,6 @@ export async function sendConfirmationMail(to:string,name:string) {
       
     }
 );
-console.log("mail sent")
     }catch(error){
         console.error("resend error",error)
     }
