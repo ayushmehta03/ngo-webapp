@@ -11,7 +11,7 @@ export default async function (name:string,email:string,query:string){
         pass: process.env.SMTP_PASS,
       },
     });
- const info= transporter.sendMail({
+  transporter.sendMail({
       from: `"Creative NGO" <${process.env.SMTP_USER}>`,
       to:process.env.ADMIN_EMAIL,
       subject:"User Query Mail Sir",

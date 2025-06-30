@@ -2,10 +2,7 @@
 
 import { prisma } from "@/app/utilis/db";
 import cloudinary from "@/lib/cloudinary";
-import { rejects } from "assert";
-import { error } from "console";
 import { redirect } from "next/navigation"
-import { resolve } from "path";
 
 export default async function handleSubmission(formData:FormData) {
   const title = formData.get("title") as string | null;

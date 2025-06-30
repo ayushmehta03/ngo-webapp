@@ -13,7 +13,7 @@ export async function sendConfirmationMail(to: string, name: string) {
       },
     });
 
-    const info = await transporter.sendMail({
+     await transporter.sendMail({
       from: `"Creative NGO" <${process.env.SMTP_USER}>`,
       to,
       subject: "🎉 Thanks for Volunteering!",

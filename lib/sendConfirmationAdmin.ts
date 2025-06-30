@@ -19,7 +19,7 @@ export async function sendMailToAdmin(
       },
     });
 
-    const info = await transporter.sendMail({
+     await transporter.sendMail({
       from: `"Creative NGO" <${process.env.SMTP_USER}>`,
       to: process.env.ADMIN_EMAIL, 
       subject: "📥 New Volunteer Registration",

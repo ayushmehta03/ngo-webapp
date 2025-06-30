@@ -1,14 +1,8 @@
 "use server"
-import toast from "react-hot-toast";
 import { prisma } from "../utilis/db";
 import { redirect } from "next/navigation";
 import { sendConfirmationMail } from "@/lib/sendConfirmationMail";
 import { sendMailToAdmin } from "@/lib/sendConfirmationAdmin";
-
-
-
-
-
 export default  async function handleSumbission(formData:FormData){
  const fullName=formData.get("fullname") as string;
  const mailId= formData.get("mailid") as string;
