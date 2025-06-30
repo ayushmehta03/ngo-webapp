@@ -2,9 +2,12 @@ import SubmitButton from "@/components/general/SumbitButton"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { PhoneCall } from "lucide-react"
+import {  Clock, MapPin, PhoneCall, PhoneCallIcon } from "lucide-react"
 import handleQuery from "./action"
-
+import { Mail } from "lucide-react"
+import whatsapp from "../../public/whatsapp.png"
+import Image from "next/image"
+import thankyou from "../../public/Super thank you-rafiki.png"
 export default function Contact(){
  return(
     <>
@@ -56,7 +59,45 @@ export default function Contact(){
           </form>
         </CardContent>
       </Card>
+      <div className="flex flex-row mt-6  items-center justify-center gap-6">
+        <div className="flex flex-row gap-4 ">
+        <Mail />
+        <p>creativengopurnea0@gmail.com</p>
+        
+        </div> 
+         <div className="flex flex-row gap-4   ">
+        <PhoneCallIcon />
+        <p className="">+918210143030</p>
+        
+        </div>
+    <div className="flex flex-row gap-4 ">
+      <Image  alt="whatsapp" src={whatsapp} width={30} />
+        <p className="">+918210143030</p>
+        
+        </div>
+        </div>
+
+        <div className="flex flex-row justify-center items-center mt-6 gap-2">
+          <MapPin />
+          <p>Asha-Sadan,Near Mahavir Mandir,Shaktinagar Marg,854303, Purnia, Bihar</p>
+    
+        </div>
+        <div className="flex flex-row justify-center items-center mt-6 gap-2">
+          <Clock/>
+      <p className="">Opens 10AM - 6PM <span className="text-red-600 px-4 text-xl" >Sunday Closed</span> </p>    
+        </div>
+
+<div className="mt-6 text-center gap-4 justify-center items-center">
+  <p>For more info you can contact us at the given number or fill up the form above</p>
+  <Image  alt="thankyou" src={thankyou} width={200}/>
+
+</div>
+
+  
+
+  
     </>
 
  )
 }
+
