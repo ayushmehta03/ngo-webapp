@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  motion,
-  useMotionValue,
-  useSpring,
-  useTransform,
-  animate,
-} from "framer-motion";
+import {animate} from "framer-motion";
 import { useEffect, useState } from "react";
 import { School, Users, HeartPulse, Leaf } from "lucide-react";
 

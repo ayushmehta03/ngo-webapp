@@ -3,6 +3,7 @@
 import { prisma } from "@/app/utilis/db";
 import cloudinary from "@/lib/cloudinary";
 import { redirect } from "next/navigation"
+import type { UploadApiResponse } from "cloudinary";
 
 export default async function handleSubmission(formData:FormData) {
   const title = formData.get("title") as string | null;
@@ -24,7 +25,7 @@ const uploadResult= await new Promise ((resolve,reject)=>{
       else resolve(result)
   }) .end(buffer);
 })
-const imageUrl = (uploadResult as any).secure_url;
+const imageUrl = (uploadResult as UploadApiResponse).secure_url;
 await prisma.blogPost.create({
  data: { 
   title,
