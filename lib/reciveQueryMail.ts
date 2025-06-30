@@ -1,5 +1,4 @@
 import nodemailer from "nodemailer"
-
 export default async function (name:string,email:string,query:string){
     try{
         const transporter= nodemailer.createTransport({
