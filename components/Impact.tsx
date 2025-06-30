@@ -1,6 +1,12 @@
 "use client";
 
-import { motion, useMotionValue, useSpring, useTransform, animate } from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+  useTransform,
+  animate,
+} from "framer-motion";
 import { useEffect, useState } from "react";
 import { School, Users, HeartPulse, Leaf } from "lucide-react";
 
@@ -30,9 +36,9 @@ function AnimatedCounter({ target }: { target: number }) {
 
 export default function ImpactSection() {
   return (
-    <section className="py-16 ">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-purple-700 dark:text-white mb-10">
+    <section className="py-12 px-4 w-full">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center text-purple-700 dark:text-white mb-10">
           📊 Our Impact
         </h2>
 
@@ -40,7 +46,7 @@ export default function ImpactSection() {
           {impactData.map((item, index) => (
             <div
               key={index}
-              className=" p-6 rounded-xl text-center shadow hover:shadow-md transition"
+              className="p-6 rounded-xl text-center shadow hover:shadow-md transition"
             >
               <div className="text-purple-700 dark:text-purple-300 mb-3 flex justify-center">
                 {item.icon}
@@ -48,7 +54,9 @@ export default function ImpactSection() {
               <div className="text-2xl font-bold text-purple-800 dark:text-purple-300">
                 <AnimatedCounter target={item.count} />
               </div>
-              <p className="text-gray-700 dark:text-gray-300 mt-2">{item.label}</p>
+              <p className="text-gray-700 dark:text-gray-300 mt-2 text-sm sm:text-base">
+                {item.label}
+              </p>
             </div>
           ))}
         </div>

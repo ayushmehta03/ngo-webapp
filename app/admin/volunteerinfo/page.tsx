@@ -21,13 +21,12 @@ async function getData(): Promise<Details[]> {
   }));
 }
 
-
 export default async function VolunteerInfo() {
   const data = await getData();
 
   return (
-    <div className="space-y-6 p-4">
-      <div className="flex flex-row gap-4 items-center justify-between">
+    <div className="space-y-6 px-4 py-6 w-full">
+      <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
         <div className="flex items-center gap-2">
           <LayoutDashboard className="text-muted-foreground" />
           <Link href="/admin" className={buttonVariants({ variant: "ghost" })}>
@@ -36,7 +35,9 @@ export default async function VolunteerInfo() {
         </div>
       </div>
 
-      <DataTable columns={columns} data={data} />
+      <div className="w-full overflow-x-auto">
+        <DataTable columns={columns} data={data} />
+      </div>
     </div>
   );
 }

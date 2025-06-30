@@ -1,4 +1,3 @@
-
 import SubmitButton from "@/components/general/SumbitButton";
 import {
   Card,
@@ -13,20 +12,18 @@ import VolunteerMain from "@/components/VolunteerMain";
 import handleSumbission from "./action";
 
 export default function Volunteer() {
-  
-
   return (
     <>
       <VolunteerMain />
-      <Card className="max-w-lg mx-auto py-8 px-2 bg-white dark:bg-black">
+      <Card className="w-full max-w-md mx-auto py-8 px-4 bg-white dark:bg-black">
         <CardHeader>
           <CardTitle>Tell us About You</CardTitle>
           <CardDescription>Kindly fill in the information</CardDescription>
         </CardHeader>
 
         <CardContent>
-          <form  className="flex flex-col gap-4" action={handleSumbission}>
-            <div className="flex flex-col gap-4">
+          <form className="flex flex-col gap-4" action={handleSumbission}>
+            <div className="flex flex-col gap-2">
               <Label>Enter your name</Label>
               <Input
                 name="fullname"
@@ -36,7 +33,7 @@ export default function Volunteer() {
               />
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2">
               <Label>Enter your email id</Label>
               <Input
                 name="mailid"
@@ -46,7 +43,7 @@ export default function Volunteer() {
               />
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2">
               <Label>How you can support us?</Label>
               <Input
                 name="supportType"
@@ -56,7 +53,7 @@ export default function Volunteer() {
               />
             </div>
 
-            <div className="flex flex-col gap-4 mb-4">
+            <div className="flex flex-col gap-2 mb-4">
               <Label>Enter your phone no</Label>
               <Input
                 name="phoneNo"

@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/ui/theme-provider"
 import Navbar from "@/components/Navbar";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from 'react-hot-toast'
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,6 +43,7 @@ export default function RootLayout({
             <Navbar />
             <Toaster />
             {children}
+            <Footer />
           </ThemeProvider>
           </ClerkProvider>
         </body>
