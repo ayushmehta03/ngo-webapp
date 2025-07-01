@@ -25,7 +25,6 @@ export default function Footer() {
         </div>
         <ul className="flex flex-wrap justify-center gap-4 text-black dark:text-gray-300 text-sm">
           <li><Link href="/volunteer">Volunteer</Link></li>
-          <li><Link href="/donate">Donate</Link></li>
           <li><Link href="/contact">Contact</Link></li>
           <li><Link href="/blog">Blog</Link></li>
         </ul>
