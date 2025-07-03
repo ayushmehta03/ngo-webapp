@@ -1,7 +1,9 @@
+export const dynamic = "force-dynamic"; 
+
 import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
-import { columns, Details } from "./columns";
-import { DataTable } from "./data-table";
+import { columns, Details } from "../../../components/columns";
+import { DataTable } from "../../../components/data-table";
 import { LayoutDashboard } from "lucide-react";
 import { prisma } from "@/app/utilis/db";
 import { format } from "date-fns";
