@@ -42,10 +42,10 @@ export default function ImpactSection() {
               key={index}
               className="p-6 rounded-xl text-center shadow hover:shadow-md transition"
             >
-              <div className="text-purple-700 dark:text-purple-300 mb-3 flex justify-center">
+              <div className="text-purple-700 dark:text-blue-600 mb-3 flex justify-center">
                 {item.icon}
               </div>
-              <div className="text-2xl font-bold text-purple-800 dark:text-purple-300">
+              <div className="text-2xl font-bold text-purple-800 dark:text-gray-300">
                 <AnimatedCounter target={item.count} />
               </div>
               <p className="text-gray-700 dark:text-gray-300 mt-2 text-sm sm:text-base">

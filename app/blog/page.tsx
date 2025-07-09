@@ -16,8 +16,8 @@ export default async function BlogPage() {
   return (
     <>
       <div className="flex flex-col gap-3 items-center text-center my-6 px-4">
-        <h1 className="text-2xl sm:text-3xl font-bold text-black dark:text-gray-300 flex items-center gap-2">
-          Our Story in Frames <Image size={20}  />
+        <h1 className="text-2xl sm:text-3xl font-bold text-black dark:text-blue-600 flex items-center gap-2">
+          Our Story in Frames <Image size={24}/>
         </h1>
         <h2 className="text-lg sm:text-2xl font-semibold text-black dark:text-gray-300">
           A visual diary of change, one frame at a time

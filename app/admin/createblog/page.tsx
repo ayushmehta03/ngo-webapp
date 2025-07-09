@@ -37,7 +37,7 @@ export default function CreateBlog() {
 
             <div className="flex flex-col gap-2">
               <Label>Author</Label>
-              <Textarea name="content" required placeholder="Lovely Day" />
+              <Input name="content" required placeholder="Lovely Day" />
             </div>
 
             <div className="flex flex-col gap-2">

@@ -3,6 +3,8 @@ import Image from "next/image";
 import ngocommonpng from "../public/ngo.png";
 import earthimage from "../public/earth.svg";
 import ImpactSection from "@/components/Impact";
+import InfoCards from "@/components/InfoCards";
+import { WormIcon } from "lucide-react";
 
 export default function Home() {
   return (
@@ -18,19 +20,23 @@ export default function Home() {
         <Image alt="Earth Image" src={earthimage} height={70} width={120} />
       </div>
 
-      <div className="flex flex-col items-center px-4 py-6 text-center">
+      <div className="flex flex-col items-center px-4 py-6 text-center ">
         <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-purple-700 dark:text-white max-w-xl sm:max-w-2xl">
           Empowering Rural India through Education, Employment, and Empathy
         </h2>
 
         <div className="mt-5 space-y-4 max-w-md sm:max-w-xl md:max-w-3xl text-sm sm:text-base text-black dark:text-gray-300">
           <p>
-            Creative Educational & Social Welfare Organization, based in Purnia, Bihar (est. 2002), is a registered NGO dedicated to sustainable rural development. We promote a wide range of social services—including education & literacy, women & youth empowerment, animal husbandry & fisheries, health & nutrition, vocational training, microfinance (SHGs), legal awareness, and environmental management.
+            Creative Educational & Social Welfare Organization, based in Purnia, Bihar est. 2002, is a registered NGO dedicated to sustainable rural development. We promote a wide range of social services—including education & literacy, women & youth empowerment, animal husbandry & fisheries, health & nutrition, vocational training, microfinance (SHGs), legal awareness, and environmental management.
           </p>
           <p>
-            Led by Secretary Vijay Kumar Arya, we focus on building community resilience and self-reliance through initiatives such as:
-          </p>
+Led by Secretary Vijay Kumar Arya, our mission is to strengthen community resilience and promote self-reliance through a range of impactful initiatives.          </p>
         </div>
+      </div>
+      <div className="mt-4">
+        <h2 className="text-2xl text-center font-semibold text-green-500"> What We Do in Sericulture</h2>
+        
+<InfoCards />
       </div>
 
       <ImpactSection />

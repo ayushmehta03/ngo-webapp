@@ -19,7 +19,13 @@ export default function adminDashboard() {
         className={buttonVariants({ variant: "secondary" })}
         href="/admin/createblog"
       >
-        Create Blog
+        Create Post
+      </Link>
+       <Link
+        className={buttonVariants({ variant: "secondary" })}
+        href="/admin/managepost"
+      >
+        Manage Posts
       </Link>
     </div>
   );
