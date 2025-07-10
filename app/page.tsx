@@ -1,15 +1,31 @@
 "use client";
+import Head from "next/head";
 import Image from "next/image";
 import ngocommonpng from "../public/ngo.png";
 import earthimage from "../public/earth.svg";
 import ImpactSection from "@/components/Impact";
 import InfoCards from "@/components/InfoCards";
-import { WormIcon } from "lucide-react";
 
 export default function Home() {
   return (
+    
     <>
-      <div className="p-4 flex flex-col sm:flex-row items-center justify-center gap-3 text-black dark:text-gray-300 text-center">
+    <Head>
+  <title>Creative NGO Purnea – Empowering Rural Bihar</title>
+  <meta name="description" content="Creative Educational & Social Welfare Organization is a Purnea-based NGO focused on rural education, women empowerment, health, and self-reliance." />
+  <meta name="keywords" content="NGO in Bihar, Purnea NGO, Rural education, Volunteer Bihar, Women empowerment NGO, Creative NGO Purnea" />
+  <meta name="author" content="Creative Educational & Social Welfare Organization" />
+
+  <meta property="og:title" content="Creative NGO Purnea – Empowering Rural India" />
+  <meta property="og:description" content="Join us in creating change across Bihar through education, empowerment, and sustainability." />
+  <meta property="og:image" content="/og-image.jpg" />
+  <meta property="og:url" content="https://www.creativengopurnea.org" />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+</Head>
+
+      <div className="p-4 flex flex-col sm:flex-row items-center justify-center gap-3 text-black dark:text-gray-300 text-center ">
         <h1 className="text-2xl sm:text-3xl font-semibold max-w-xs sm:max-w-none">
           Creative Educational and Social Welfare
         </h1>

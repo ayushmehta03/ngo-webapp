@@ -2,6 +2,7 @@ import { BicepsFlexed } from "lucide-react";
 import Image from "next/image";
 import volunteer from "../public/volunteer.svg";
 import user from "../public/register.png";
+import Roles from "./Roles";
 
 export default function VolunteerMain() {
   return (
@@ -34,6 +35,8 @@ export default function VolunteerMain() {
           className="transition-transform duration-300 hover:scale-105"
         />
       </div>
+            <Roles />
+
 
       <div className="flex flex-col sm:flex-row mt-6 items-center justify-center gap-4 px-4 mb-10">
         <h2 className="font-semibold text-base sm:text-xl text-center">
