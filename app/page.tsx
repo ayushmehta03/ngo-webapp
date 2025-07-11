@@ -5,6 +5,7 @@ import ngocommonpng from "../public/ngo.png";
 import earthimage from "../public/earth.svg";
 import ImpactSection from "@/components/Impact";
 import InfoCards from "@/components/InfoCards";
+import WomenPower from "@/components/general/WomenPower";
 
 export default function Home() {
   return (
@@ -53,7 +54,10 @@ Led by Secretary Vijay Kumar Arya, our mission is to strengthen community resili
         <h2 className="text-2xl text-center font-semibold text-green-500"> What We Do in Sericulture</h2>
         
 <InfoCards />
+       <h2 className="text-center text-2xl font-semibold mt-6 mb-6 text-blue-500">Empowering Women Through Skill Development</h2>
+
       </div>
+      <WomenPower />
 
       <ImpactSection />
     </>

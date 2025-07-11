@@ -32,7 +32,8 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <Navbar />
-            <Toaster />
+       <Toaster position="top-center" reverseOrder={false} />
+
             {children}
             <Footer />
           </ThemeProvider>
