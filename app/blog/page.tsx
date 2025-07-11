@@ -1,3 +1,4 @@
+export const revalidate = 60; 
 import BlogCard from "@/components/general/BlogCrad";
 import { prisma } from "../utilis/db";
 import { Image } from "lucide-react";
