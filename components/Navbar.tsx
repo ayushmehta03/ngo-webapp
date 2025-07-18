@@ -22,6 +22,11 @@ const Navbar = () => {
               Our Work
             </Link>
           </li>
+                    <li>
+          <Link href="/dignitary">
+          Dignitary Visits
+          </Link>
+          </li>
           <li>
             <Link href="/volunteer" className="hover:text-blue-500">
               Volunteer
@@ -32,6 +37,7 @@ const Navbar = () => {
               Contact Us
             </Link>
           </li>
+
           <ModeToggle />
         </ul>
       </div>
