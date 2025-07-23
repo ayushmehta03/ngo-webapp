@@ -2,6 +2,7 @@ export const revalidate = 60;
 import BlogCard from "@/components/general/BlogCrad";
 import { prisma } from "../utilis/db";
 import { Image } from "lucide-react";
+import PgSection from "@/components/general/PgSection";
 
 async function getData() {
   const data = await prisma.blogPost.findMany({
@@ -30,6 +31,11 @@ export default async function BlogPage() {
           <BlogCard key={item.id} data={item} />
         ))}
       </div>
+      <section className="mt-6 ">
+        <PgSection />
+
+
+      </section>
     </>
   );
 }
