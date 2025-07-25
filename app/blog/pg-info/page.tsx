@@ -1,5 +1,8 @@
+"use client"
+import SubmitButton from "@/components/general/SumbitButton";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import {
   BedSingle,
   BrushCleaning,
@@ -12,8 +15,19 @@ import {
   WifiCog,
 } from "lucide-react";
 import { FaMoneyBill } from "react-icons/fa";
+import handleSubmission from "./action";
+import toast from "react-hot-toast";
 
 export default function PgInfo() {
+  async function handleSubmitWithToast(formData: FormData) {
+  const promise = handleSubmission(formData);
+  toast.promise(promise, {
+    loading: "Submitting...",
+    success: "Form submitted successfully!",
+    error: "Failed to submit. Please try again.",
+  });
+  await promise;
+}
   return (
     <>
     <div className="px-4 sm:px-10 max-w-4xl mx-auto mt-8">
@@ -101,22 +115,49 @@ export default function PgInfo() {
         <FormInputIcon className="text-green-700 dark:text-green-600" />
         </div>
           
-        <form className="flex flex-col gap-2 min-w-full">
+        <form action={handleSubmitWithToast} className="flex flex-col gap-2 min-w-full">
         <div className="flex flex-col justify-center gap-2  p-2 w-full">
   <Label>Enter your name</Label>
-     <Input  required type="text"  className=""/>
+     <Input  required type="text" name="name"  className=""/>
         </div>
-                <div className="flex flex-col justify-center gap-2  p-2 w-full">
+                <div className="flex flex-col justify-center gap-3  p-2 w-full">
   <Label>Enter your email id</Label>
-     <Input  required type="email"  className=""/>
+     <Input  required type="email" name="email"  className=""/>
         </div>
-        <div className="flex flex-col justify-center gap-2  p-2 w-full">
+        <div className="flex flex-col justify-center gap-3  p-2 w-full">
   <Label>Enter your mobile number</Label>
-     <Input  required type="email"  className=""/>
+     <Input  required type="text"name="number" className=""/>
         </div>
+        <div className="flex flex-col justify-center gap-3  p-2 w-full">
+  <Label>Choose room type </Label>
+  <Select required name="roomtype">
+  <SelectTrigger className="w-[320px]">
+    <SelectValue  placeholder="Room Type" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="single" >Single Seater</SelectItem>
+    <SelectItem value="double">Double Seater</SelectItem>
+    <SelectItem value="triple">Triple Dormitory</SelectItem>
+  </SelectContent>
+</Select>
+        </div>
+         <div className="flex flex-col justify-center gap-3  p-2 w-full mb-2">
+  <Label>Choose your profession </Label>
+  <Select required name="profession">
+  <SelectTrigger  className="w-[320px]">
+    <SelectValue placeholder="Proffesion" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="student" >Student </SelectItem>
+    <SelectItem value="working">Working</SelectItem>
+  </SelectContent>
+</Select>
+        </div>
+  <SubmitButton  />
         </form>
         </div>
       </section>
     </>
   );
 }
+
