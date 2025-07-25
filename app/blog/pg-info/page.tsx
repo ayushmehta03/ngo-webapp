@@ -1,8 +1,11 @@
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   BedSingle,
   BrushCleaning,
   CctvIcon,
   ChefHat,
+  FormInputIcon,
   HelpingHand,
   IndianRupee,
   Lightbulb,
@@ -90,6 +93,29 @@ export default function PgInfo() {
             </div>
           </div>
         ))}
+      </section>
+      <section className="flex justify-center mt-12">
+        <div className="mt-4 flex flex-col items-center  p-4 rounded-2xl border-2 w-[360px] h-140 ">
+        <div className="flex gap-3 items-center p-2">
+        <h2 className="text-xl font-semibold text-blue-700 dark:text-blue-500">Enquiry Form</h2>
+        <FormInputIcon className="text-green-700 dark:text-green-600" />
+        </div>
+          
+        <form className="flex flex-col gap-2 min-w-full">
+        <div className="flex flex-col justify-center gap-2  p-2 w-full">
+  <Label>Enter your name</Label>
+     <Input  required type="text"  className=""/>
+        </div>
+                <div className="flex flex-col justify-center gap-2  p-2 w-full">
+  <Label>Enter your email id</Label>
+     <Input  required type="email"  className=""/>
+        </div>
+        <div className="flex flex-col justify-center gap-2  p-2 w-full">
+  <Label>Enter your mobile number</Label>
+     <Input  required type="email"  className=""/>
+        </div>
+        </form>
+        </div>
       </section>
     </>
   );
