@@ -23,7 +23,7 @@ const Navbar = () => {
             </Link>
           </li>
                     <li>
-          <Link href="/dignitary">
+          <Link href="/dignitary" className="hover:text-blue-500">
           Dignitary Visits
           </Link>
           </li>

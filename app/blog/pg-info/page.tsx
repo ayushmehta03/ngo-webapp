@@ -12,11 +12,13 @@ import {
   HelpingHand,
   IndianRupee,
   Lightbulb,
+  Mail,
   WifiCog,
 } from "lucide-react";
-import { FaMoneyBill } from "react-icons/fa";
+import { FaMoneyBill, FaWhatsapp } from "react-icons/fa";
 import handleSubmission from "./action";
 import toast from "react-hot-toast";
+import Link from "next/link";
 
 export default function PgInfo() {
   async function handleSubmitWithToast(formData: FormData) {
@@ -157,7 +159,31 @@ export default function PgInfo() {
         </form>
         </div>
       </section>
+      <section className="mt-12 flex justify-center items-center  gap-6">
+        <div className="flex items-center justify-center gap-2">
+          <FaWhatsapp  size={24} className="text-green-500"/>
+          <Link
+          href="https://wa.me/8210143030?text=Hello%20I%20am%20interested%20in%20your%20PG"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="hover:text-green-500"
+
+          
+          
+          >
+          
+          Chat on Whatsapp
+
+          </Link>
+
+        </div>
+        <div className="flex gap-2 justify-center items-center">
+        <Mail  className="text-blue-500"/>
+        <p>            creswopurnia@gmail.com
+</p>
+        </div>
+
+      </section>
     </>
   );
 }
-

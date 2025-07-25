@@ -35,7 +35,7 @@ export default function Footer() {
         <ul className="flex flex-col gap-2 text-center text-sm">
           <li className="flex items-center gap-2 justify-center">
             <Mail className="w-4 h-4" />
-            creativengopurnea0@gmail.com
+            creswopurnia@gmail.com
           </li>
           <li className="flex items-center gap-2 justify-center">
             <Phone className="w-4 h-4" />
