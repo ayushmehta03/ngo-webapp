@@ -1,5 +1,7 @@
 "use server";
 
+import sendEnquiryMail from "@/lib/sendEnquiryMail";
+
 export default async function handleSubmission(formdata: FormData) {
   const name = formdata.get("name") as string;
   const mailId = formdata.get("email") as string;
@@ -11,7 +13,6 @@ export default async function handleSubmission(formdata: FormData) {
     throw new Error("Missing fields");
   }
 
-  console.log({ name, mailId, mobileNumber, roomType, profession });
-
+  await sendEnquiryMail(name,mobileNumber,roomType,mailId,profession);
   return { success: true };
 }
