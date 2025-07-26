@@ -13,6 +13,7 @@ import {
   IndianRupee,
   Lightbulb,
   Mail,
+  MapIcon,
   WifiCog,
 } from "lucide-react";
 import { FaMoneyBill, FaWhatsapp } from "react-icons/fa";
@@ -183,7 +184,23 @@ export default function PgInfo() {
 </p>
         </div>
 
+
       </section>
+       <section className="mt-12 flex justify-center items-center   gap-6">
+        <div className="flex items-center justify-center gap-2 ">
+         <MapIcon className="text-blue-500"/>
+         <p>Near Bright Carrer School, </p>
+         <p>South ShaktiNagar,</p>
+         <p>Purnea</p>
+
+        </div>
+       
+
+
+      </section>
+
+     
+
     </>
   );
 }
