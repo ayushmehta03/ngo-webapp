@@ -1,4 +1,4 @@
-export const revalidate = 60; 
+export const dynamic = "force-dynamic"; 
 import BlogCard from "@/components/general/BlogCrad";
 import { prisma } from "../utilis/db";
 import { Image } from "lucide-react";
