@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Creative NGO",
-  description: "Creative Educational and Social Welfare",
+  description: "Creative Educational and Social Welfare Purnea  ",
 };
 
 export default function RootLayout({

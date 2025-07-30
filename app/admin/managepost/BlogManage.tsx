@@ -1,4 +1,6 @@
 "use client"
+export const dynamic = "force-dynamic"; 
+
 import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Image from "next/image";
