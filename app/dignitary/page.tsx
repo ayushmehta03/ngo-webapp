@@ -17,8 +17,8 @@ export default function DignitaryVisits() {
     { id: "5", title: "Sericulture Department Delegation", src: "/officials/5.jpeg" },
     { id: "6", title: "Field Visist by Officials ", src: "/officials/6.jpeg" },
     { id: "7", title: "Disctrict Magistate Visit", src: "/officials/8.jpeg" },
-    { id: "8", title: "Minister Visit", src: "/officials/9.jpeg" },
-    { id: "9", title: "Minister Visit", src: "/officials/10.jpeg" },
+    { id: "8", title: "Visit by MP Mr.Prem Chandra Gupta", src: "/officials/9.jpeg" },
+    { id: "9", title: "Visit by Education Minister Mr.Prakash Yadav", src: "/officials/10.jpeg" },
   ];
 
   return (
