@@ -8,7 +8,8 @@ import InfoCards from "@/components/InfoCards";
 import WomenPower from "@/components/general/WomenPower";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import banner from "../public/banner.jpeg"
 export default function Home() {
   return (
     
@@ -62,24 +63,36 @@ Led by Secretary Vijay Kumar Arya, our mission is to strengthen community resili
       <WomenPower />
 
       <ImpactSection />
-      <section className="flex flex-col items-center justify-center gap-6 text-center mt-12 px-4">
+    <section className="flex flex-col items-center justify-center gap-6 text-center mt-12 px-4">
   <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 max-w-xl leading-relaxed">
     We offer PG and hostel facilities exclusively for girls and women at affordable prices.
   </p>
 
-  <h2 className="text-2xl sm:text-3xl font-bold text-blue-700 dark:text-blue-500">
-    APNA PG & HOSTEL FOR GIRLS AND WOMEN
-  </h2>
+  
+
+  <div className="w-full max-w-4xl">
+    <AspectRatio ratio={16 / 9}>
+      <Image
+        src={banner}
+        alt="banner"
+        fill
+        className="rounded-md object-contain"
+        sizes="(max-width: 768px) 100vw, 700px"
+      />
+    </AspectRatio>
+  </div>
 
   <Link href="/blog/pg-info" passHref>
     <Button
       variant="ghost"
-      className="rounded-2xl px-6 py-2 bg-gradient-to-r from-blue-500 to-violet-600   hover:brightness-110 scale-110 transition-all"
+      className="rounded-2xl px-6 py-2 bg-gradient-to-r from-blue-500 to-violet-600 hover:brightness-110 scale-110 transition-all"
     >
       Get Info
     </Button>
   </Link>
 </section>
+
+
 
     </>
   );
