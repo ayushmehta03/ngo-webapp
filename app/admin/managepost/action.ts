@@ -13,3 +13,19 @@ export default async function deletePost(postId:string){
 
     }
 }
+
+export  async function editPost(postId:string,updatedData:{title?:string}) {
+    try{
+        await prisma.blogPost.update({
+            where:{id:postId},
+            data:updatedData
+        })
+         revalidatePath("/admin/manaage/post")
+
+
+        
+    } catch(err){
+        throw new Error("Failed to update title")
+    }
+    
+}

@@ -36,7 +36,7 @@ export default function CreateBlog() {
 
             <div className="flex flex-col gap-2">
               <Label>Author</Label>
-              <Input name="content" required placeholder="Lovely Day" />
+              <Input name="content" required placeholder="Enter your name " />
             </div>
 
             <div className="flex flex-col gap-2">
