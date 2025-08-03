@@ -27,6 +27,12 @@ export default function adminDashboard() {
       >
         Manage Posts
       </Link>
+      <Link
+        className={buttonVariants({ variant: "secondary" })}
+        href="/admin/postdignitary"
+      >
+        Post Dignitary Images
+      </Link>
     </div>
   );
 }

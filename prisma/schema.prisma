@@ -37,3 +37,10 @@ model helpQuery{
   email String
   query String
 }
+
+model dignitaryVisit{
+  id String @id@default(uuid())
+  title String
+  imagUrl String
+  createdAt DateTime @default(now())
+}
