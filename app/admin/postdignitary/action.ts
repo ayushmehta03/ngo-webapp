@@ -1,4 +1,4 @@
-'use server';
+ 'use server';
 
 import { prisma } from "@/app/utilis/db";
 import cloudinary from "@/lib/cloudinary";
@@ -45,25 +45,3 @@ export async function handleDignitary(prevState: any, formData: FormData) {
   }
 }
 
-export async function editPost(postId: string, updatedData: { title?: string }) {
-  try {
-    await prisma.dignitaryVisit.update({
-      where: { id: postId },
-      data: updatedData,
-    });
-    revalidatePath("/admin/manage/post");
-  } catch (err) {
-    throw new Error("Failed to update title");
-  }
-}
-
-export default async function deletePost(postId: string) {
-  try {
-    await prisma.dignitaryVisit.delete({
-      where: { id: postId },
-    });
-    revalidatePath("/admin/manage/post");
-  } catch (error) {
-    throw new Error("Failed to delete post");
-  }
-}

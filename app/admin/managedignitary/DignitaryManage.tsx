@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import deletePost, { editPost } from "./action";
+import { deletePost, editPost } from "./action";
 import { useState, useTransition } from "react";
 import toast from "react-hot-toast";
 import { Input } from "@/components/ui/input";
@@ -51,52 +51,48 @@ export default function DignitaryManage({ data }: IAppProps) {
   };
 
   return (
-    <Card className="overflow-hidden shadow-lg transition hover:shadow-xl dark:border-gray-800 dark:bg-gray-950 group w-full max-w-[400px] h-[440px] flex flex-col">
-      <div className="relative w-full h-48">
+    <Card className="shadow-md hover:shadow-xl transition w-full rounded-xl overflow-hidden bg-white dark:bg-gray-900 border dark:border-gray-800 flex flex-col">
+      <div className="relative w-full">
         <AspectRatio ratio={16 / 9}>
           <Image
             src={data.imagUrl}
             alt={data.title}
             fill
             unoptimized
-            className="rounded-t-md object-cover"
+            className="object-cover"
           />
         </AspectRatio>
       </div>
 
-      <CardContent className="p-4 flex flex-col justify-between flex-grow">
-        <div className="mb-4">
-          <p className="text-sm text-gray-600 dark:text-gray-400">
+      <CardContent className="p-4 flex flex-col gap-3 flex-grow">
+        <div>
+          <p className="text-xs text-muted-foreground mb-1">
             Posted on {formattedDate}
           </p>
-          <p>{data.title}</p>
+          <p className="font-semibold text-base line-clamp-2">{data.title}</p>
         </div>
 
         <Input
-          className="mb-4"
-          placeholder="Edit Title for your post"
-          required
+          className="text-sm"
+          placeholder="Edit post title"
           value={newTitle}
           onChange={(e) => setNewTitle(e.target.value)}
-          type="text"
         />
 
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center gap-2 mt-auto">
           <Button
             onClick={changeTitle}
-            disabled={isPending}
-            className="text-white hover:bg-gradient-to-r from-blue-500 to bg-purple-500"
+            disabled={isPending || newTitle.trim() === ""}
+            className="bg-gradient-to-r from-blue-500 to-purple-500 text-white"
           >
-            {isPending ? "Updating..." : "Update Title"}
+            {isPending ? "Updating..." : "Update"}
           </Button>
-
           <Button
-            variant="ghost"
-            className="hover:bg-gradient-to-r from-blue-500 to bg-purple-500"
+            variant="destructive"
             disabled={isPending}
             onClick={handleDelete}
           >
-            {isPending ? "Deleting..." : "Delete Post"}
+            {isPending ? "Deleting..." : "Delete"}
           </Button>
         </div>
       </CardContent>

@@ -1,17 +1,17 @@
 'use client';
 
-import ManageDignitary from "./dignitaryupdate";
 import SubmitButton from '@/components/general/SumbitButton';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Image } from 'lucide-react';
 import { handleDignitary } from './action';
-import { useFormState } from 'react-dom';
-import { useEffect } from 'react';
+import { useActionState, useEffect } from 'react';
 import toast from 'react-hot-toast';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 const DignitaryPost = () => {
-  const [state, formAction] = useFormState(handleDignitary, null);
+  const [state, formAction] = useActionState(handleDignitary, null);
 
   useEffect(() => {
     if (state?.success) {
@@ -22,6 +22,7 @@ const DignitaryPost = () => {
   }, [state]);
 
   return (
+     <>
     <section className='flex flex-col justify-center items-center'>
       <div className='flex items-center gap-2 justify-center'>
         <h2>Upload Dignitary Images</h2>
@@ -61,12 +62,21 @@ const DignitaryPost = () => {
         </form>
       </div>
 
-      <div className='flex items-center justify-center mt-6 '>
-        <h2 className='text-xl font-semibold'>Manage Posts</h2>
-      </div>
 
-      <ManageDignitary />
     </section>
+    <div className='flex justify-center items-center mt-8'>
+    <Link href="/admin/managedignitary" passHref>
+    <Button
+      variant="ghost"
+      className="rounded-2xl px-6 py-2 bg-gradient-to-r from-blue-500 to-violet-600 hover:brightness-110 scale-110 transition-all"
+    >
+      Manage Posts
+    </Button>
+  </Link>
+    </div>
+
+
+   </>
   );
 };
 
