@@ -1,5 +1,6 @@
 'use client';
 
+import ManageDignitary from "./dignitaryupdate";
 import SubmitButton from '@/components/general/SumbitButton';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -59,6 +60,12 @@ const DignitaryPost = () => {
           <SubmitButton />
         </form>
       </div>
+
+      <div className='flex items-center justify-center mt-6 '>
+        <h2 className='text-xl font-semibold'>Manage Posts</h2>
+      </div>
+
+      <ManageDignitary />
     </section>
   );
 };

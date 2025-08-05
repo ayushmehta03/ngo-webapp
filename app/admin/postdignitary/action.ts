@@ -1,8 +1,9 @@
-'use server'
+'use server';
 
 import { prisma } from "@/app/utilis/db";
 import cloudinary from "@/lib/cloudinary";
 import type { UploadApiResponse } from "cloudinary";
+import { revalidatePath } from "next/cache";
 
 export async function handleDignitary(prevState: any, formData: FormData) {
   const title = formData.get("title") as string | null;
@@ -27,19 +28,42 @@ export async function handleDignitary(prevState: any, formData: FormData) {
       }).end(buffer);
     });
 
-    const imageUrl = (uploadResult as UploadApiResponse).secure_url;
+    const imagUrl = (uploadResult as UploadApiResponse).secure_url;
 
     await prisma.dignitaryVisit.create({
       data: {
         title,
-        imagUrl: imageUrl,
-      }
+        imagUrl,
+      },
     });
 
-    return { success: true, message: "Upload successful 🎉" };
-
+    revalidatePath("/admin/manage/post");
+    return { success: true, message: "Upload successful" };
   } catch (err) {
     console.error(err);
     return { success: false, message: "Upload failed. Try again." };
+  }
+}
+
+export async function editPost(postId: string, updatedData: { title?: string }) {
+  try {
+    await prisma.dignitaryVisit.update({
+      where: { id: postId },
+      data: updatedData,
+    });
+    revalidatePath("/admin/manage/post");
+  } catch (err) {
+    throw new Error("Failed to update title");
+  }
+}
+
+export default async function deletePost(postId: string) {
+  try {
+    await prisma.dignitaryVisit.delete({
+      where: { id: postId },
+    });
+    revalidatePath("/admin/manage/post");
+  } catch (error) {
+    throw new Error("Failed to delete post");
   }
 }
