@@ -34,9 +34,9 @@ export default function Home() {
 
 <div className="w-full flex justify-center pt-4 px-4">
       <motion.div
-        initial={{ opacity: 0, scale: 0.8, y: 20 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ duration: 1.4, ease: "easeOut" }}
+        initial={{ opacity: 0.4, scale: 0.8, y: 20,x:600 }}
+        animate={{ opacity: 1, scale: 1, y: 0,x:0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <Image
           src={creativengo}
