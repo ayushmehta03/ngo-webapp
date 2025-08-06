@@ -3,6 +3,9 @@ import Head from "next/head";
 import Image from "next/image";
 import ngocommonpng from "../public/ngo.png";
 import earthimage from "../public/earth.svg";
+import creativengo from "../public/ngopcture.jpg";
+import { motion } from "framer-motion";
+
 import ImpactSection from "@/components/Impact";
 import InfoCards from "@/components/InfoCards";
 import WomenPower from "@/components/general/WomenPower";
@@ -28,6 +31,23 @@ export default function Home() {
 
   <meta name="twitter:card" content="summary_large_image" />
 </Head>
+
+<div className="w-full flex justify-center pt-4 px-4">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 1.4, ease: "easeOut" }}
+      >
+        <Image
+          src={creativengo}
+          alt="NGO main photo"
+          width={400}
+          height={150}
+          className="object-contain rounded-2xl h-auto w-auto max-w-[80%] sm:max-w-[300px] md:max-w-[350px] shadow-xl"
+        />
+      </motion.div>
+    </div>
+
 
       <div className="p-4 flex flex-col sm:flex-row items-center justify-center gap-3 text-black dark:text-gray-300 text-center ">
         <h1 className="text-2xl sm:text-3xl font-semibold max-w-xs sm:max-w-none">
