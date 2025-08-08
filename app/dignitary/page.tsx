@@ -1,6 +1,6 @@
 import { prisma } from "@/app/utilis/db";
 import ImpactStats from "@/components/general/ImpactStats";
- const dynamic = "force-dynamic"; 
+export const dynamic = "force-dynamic"; 
 import {
   Accordion,
   AccordionContent,
