@@ -35,7 +35,6 @@ export default async function DignitaryVisits() {
       key={visit.id}
       className="rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-gray-100 to-white dark:from-[#1f1f1f] dark:to-black hover:shadow-2xl transition-transform transform hover:scale-[1.02] duration-300 max-w-xs mx-auto"
     >
-      {/* Image section */}
       <div className="relative w-full h-52 sm:h-60">
         <img
           src={visit.imagUrl}

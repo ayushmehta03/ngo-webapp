@@ -1,5 +1,7 @@
 import { prisma } from "@/app/utilis/db"
 import BlogManage from "./BlogManage";
+ const dynamic = "force-dynamic"; 
+
 async function getData() {
   const data = await prisma.blogPost.findMany({
     orderBy: {
