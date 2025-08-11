@@ -7,6 +7,8 @@ import deletePost, { editPost } from "./action";
 import { useState, useTransition } from "react";
 import toast from "react-hot-toast";
 import { Input } from "@/components/ui/input";
+ const dynamic = "force-dynamic"; 
+
 
 interface IAppProps {
   data: {
